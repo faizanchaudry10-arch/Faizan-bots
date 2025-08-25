@@ -1,0 +1,306 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}{\f2\fnil Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 <!doctype html>\par
+<html lang="en">\par
+<head>\par
+  <meta charset="utf-8" />\par
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\par
+  <title>FAIZAN BOTS</title>\par
+  <meta name="description" content="Simple signal UI demo for Netlify deployment." />\par
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\par
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">\par
+  <style>\par
+    :root\{\par
+      --bg:#0b0b0c;\par
+      --panel:#111216;\par
+      --muted:#b8bec9;\par
+      --text:#ffffff;\par
+      --accent:#c3262c;      /* red */\par
+      --accent-2:#8f1b1f;    /* darker red */\par
+      --ring:#2a2e39;\par
+      --card:#151821;\par
+      --radius:18px;\par
+      --shadow:0 10px 30px rgba(0,0,0,.6);\par
+    \}\par
+    *\{box-sizing:border-box\}\par
+    html,body\{height:100%\}\par
+    body\{\par
+      margin:0;\par
+      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;\par
+      color:var(--text);\par
+      background:\par
+        radial-gradient(1200px 600px at 20% -10%, #1d1f2a, transparent 60%),\par
+        radial-gradient(900px 500px at 110% 110%, #1a1416, transparent 60%),\par
+        var(--bg);\par
+      display:grid;\par
+      place-items:center;\par
+      padding:24px;\par
+    \}\par
+    .wrap\{\par
+      width:min(520px, 94vw);\par
+      background:linear-gradient(180deg,#12131a 0%, #0e0f14 100%);\par
+      border:1px solid #1f2230;\par
+      border-radius:calc(var(--radius) + 2px);\par
+      padding:32px 26px 26px;\par
+      box-shadow:var(--shadow);\par
+      position:relative;\par
+      overflow:hidden;\par
+      isolation:isolate;\par
+    \}\par
+    .wrap::before\{\par
+      content:"";\par
+      position:absolute; inset:-2px;\par
+      background:\par
+        radial-gradient(200px 200px at 90% -10%, rgba(195,38,44,.18), transparent 40%),\par
+        radial-gradient(260px 220px at -10% 110%, rgba(195,38,44,.12), transparent 50%);\par
+      z-index:-1;\par
+      filter:blur(6px);\par
+    \}\par
+    .title\{\par
+      text-align:center;\par
+      letter-spacing:.12em;\par
+      font-weight:800;\par
+      font-size:38px;\par
+      margin:4px 0 18px;\par
+      color:#e7e9ee;\par
+    \}\par
+    .logo\{\par
+      width:108px; height:108px; border-radius:999px;\par
+      margin:0 auto 18px; display:grid; place-items:center;\par
+      background: radial-gradient(circle at 30% 30%, #b71d22, #5b0f12 70%);\par
+      border:3px solid #d6d7db22; box-shadow:0 6px 18px rgba(0,0,0,.5), inset 0 0 0 4px #ffffff10;\par
+      overflow:hidden;\par
+    \}\par
+    .logo svg\{width:74%; height:74%\}\par
+    .group\{display:grid; gap:12px; margin:16px 0 14px\}\par
+    label\{\par
+      font-size:12px; letter-spacing:.08em; text-transform:uppercase;\par
+      color:#98a1b3; margin-left:2px;\par
+    \}\par
+    .input\{\par
+      position:relative;\par
+    \}\par
+    select\{\par
+      width:100%;\par
+      appearance:none;\par
+      -webkit-appearance:none;\par
+      background:var(--card);\par
+      color:var(--text);\par
+      border:1px solid #262a36;\par
+      border-radius:12px;\par
+      padding:14px 44px 14px 14px;\par
+      font-size:16px;\par
+      outline:none;\par
+      transition:border .2s, box-shadow .2s, transform .02s;\par
+      box-shadow:inset 0 0 0 1px #00000040;\par
+    \}\par
+    select:focus\{border-color:#3a3f52; box-shadow:0 0 0 3px #8f1b1f55\}\par
+    .caret\{\par
+      position:absolute; right:14px; top:0; bottom:0; display:grid; place-items:center; pointer-events:none; color:#9aa3b5;\par
+    \}\par
+    .btn\{\par
+      width:100%;\par
+      border:none;\par
+      border-radius:14px;\par
+      background:linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);\par
+      color:white; font-weight:800; letter-spacing:.06em;\par
+      padding:16px 18px; cursor:pointer;\par
+      margin-top:6px; font-size:16px;\par
+      box-shadow:0 10px 24px rgba(195,38,44,.35), inset 0 -2px 0 #00000055;\par
+      transition:transform .06s ease, filter .2s ease, opacity .2s ease;\par
+    \}\par
+    .btn:hover\{filter:saturate(1.05) brightness(1.02)\}\par
+    .btn:active\{transform:translateY(1px)\}\par
+    .note\{\par
+      margin-top:12px; color:var(--muted); font-size:12px; line-height:1.45;\par
+      text-align:center;\par
+    \}\par
+    .result\{\par
+      margin-top:18px; padding:16px; border-radius:12px;\par
+      background:linear-gradient(180deg,#12131a,#101219);\par
+      border:1px solid #242837; display:none;\par
+    \}\par
+    .result h3\{margin:0 0 10px; font-size:14px; color:#cfd6e4; letter-spacing:.08em; text-transform:uppercase\}\par
+    .grid\{display:grid; grid-template-columns:1fr 1fr; gap:10px\}\par
+    .kv\{\par
+      background:#0f1219; border:1px solid #23283a; border-radius:10px; padding:10px 12px;\par
+    \}\par
+    .kv .k\{color:#97a0b4; font-size:11px; text-transform:uppercase; letter-spacing:.08em\}\par
+    .kv .v\{font-size:16px; margin-top:4px\}\par
+    .badge\{\par
+      display:inline-flex; align-items:center; gap:8px;\par
+      background:#0f1419; border:1px solid #273043; border-radius:999px; padding:8px 12px; margin-top:4px\par
+    \}\par
+    .dot\{width:8px; height:8px; border-radius:10px; background:#23c55e\}\par
+    .toast\{\par
+      position:fixed; left:50%; bottom:22px; transform:translateX(-50%);\par
+      background:#10131a; border:1px solid #2a2f42; border-radius:12px;\par
+      padding:12px 16px; color:#e7ebf4; box-shadow:var(--shadow); display:none;\par
+    \}\par
+    .footer\{\par
+      margin-top:18px; text-align:center; color:#9aa3b5; font-size:12px;\par
+      opacity:.85;\par
+    \}\par
+    .footer a\{color:#e6e9f6; text-decoration:none; border-bottom:1px dotted #e6e9f6\}\par
+  </style>\par
+</head>\par
+<body>\par
+  <main class="wrap" role="main" aria-labelledby="title">\par
+    <h1 id="title" class="title">YQT BOT PRO</h1>\par
+\par
+    <!-- Circle logo (replace SVG with your PNG if you want) -->\par
+    <div class="logo" aria-hidden="true">\par
+      <!-- quick placeholder emblem -->\par
+      <svg viewBox="0 0 100 100" fill="none">\par
+        <circle cx="50" cy="50" r="48" stroke="#f4f6fb" stroke-opacity=".14" stroke-width="4"/>\par
+        <circle cx="50" cy="50" r="34" fill="#1a0f10" stroke="#bfc4d3" stroke-opacity=".14" stroke-width="2"/>\par
+        <path d="M28 55h44v8H28z" fill="#f4f6fb" fill-opacity=".12"/>\par
+        <text x="50" y="58" text-anchor="middle" font-size="28" font-weight="800" fill="#f4f6fb">YQT</text>\par
+      </svg>\par
+    </div>\par
+\par
+    <form id="signalForm" autocomplete="off">\par
+      <div class="group">\par
+        <div class="input">\par
+          <label for="broker">Broker</label>\par
+          <select id="broker" required>\par
+            <option value="QUOTEX" selected>QUOTEX</option>\par
+            <option value="DERIV">DERIV</option>\par
+            <option value="BINOMO">BINOMO</option>\par
+          </select>\par
+          <div class="caret">\f1\u9662?\f0 </div>\par
+        </div>\par
+\par
+        <div class="input">\par
+          <label for="pair">Asset / Pair</label>\par
+          <select id="pair" required>\par
+            <option value="USD/BRL (OTC)" selected>USD/BRL (OTC)</option>\par
+            <option value="EUR/USD">EUR/USD</option>\par
+            <option value="GBP/JPY">GBP/JPY</option>\par
+            <option value="BTC/USD">BTC/USD</option>\par
+          </select>\par
+          <div class="caret">\f1\u9662?\f0 </div>\par
+        </div>\par
+\par
+        <div class="input">\par
+          <label for="timeframe">Timeframe</label>\par
+          <select id="timeframe" required>\par
+            <option value="1m" selected>1m</option>\par
+            <option value="3m">3m</option>\par
+            <option value="5m">5m</option>\par
+            <option value="15m">15m</option>\par
+          </select>\par
+          <div class="caret">\f1\u9662?\f0 </div>\par
+        </div>\par
+      </div>\par
+\par
+      <button class="btn" type="submit" id="getSignalBtn">GET SIGNAL</button>\par
+\par
+      <p class="note">\par
+        Demo only: yahan dikhaya gaya signal randomly generate hota hai.<br/>\par
+        Apni server/API se connect karke real logic laga sakte ho.\par
+      </p>\par
+\par
+      <section id="result" class="result" aria-live="polite" aria-atomic="true">\par
+        <h3>Signal</h3>\par
+        <div class="grid">\par
+          <div class="kv">\par
+            <div class="k">Action</div>\par
+            <div class="v" id="r_action">\f2\emdash </div>\par
+          </div>\par
+          <div class="kv">\par
+            <div class="k">Confidence</div>\par
+            <div class="v" id="r_conf">\emdash </div>\par
+          </div>\par
+          <div class="kv">\par
+            <div class="k">Broker</div>\par
+            <div class="v" id="r_broker">\emdash </div>\par
+          </div>\par
+          <div class="kv">\par
+            <div class="k">Pair</div>\par
+            <div class="v" id="r_pair">\emdash </div>\par
+          </div>\par
+          <div class="kv">\par
+            <div class="k">Timeframe</div>\par
+            <div class="v" id="r_tf">\emdash </div>\par
+          </div>\par
+          <div class="kv">\par
+            <div class="k">Generated</div>\par
+            <div class="v" id="r_time">\emdash </div>\par
+          </div>\par
+        </div>\par
+        <div class="badge" id="liveBadge" title="client connected">\par
+          <span class="dot"></span><span>Ready</span>\par
+        </div>\par
+      </section>\par
+\par
+      <p class="footer">\par
+        Want your own name/logo? Edit <code>&lt;title&gt;</code>, <code>.title</code>, aur SVG/IMG.\par
+      </p>\par
+    </form>\par
+  </main>\par
+\par
+  <div id="toast" class="toast" role="status">Signal copied to clipboard</div>\par
+\par
+  <script>\par
+    // Simple helper: random signal for demo\par
+    function fakeSignal() \{\par
+      const actions = ["BUY", "SELL", "CALL", "PUT"];\par
+      const action = actions[Math.floor(Math.random()*actions.length)];\par
+      const confidence = (75 + Math.random()*23).toFixed(1) + "%";\par
+      return \{ action, confidence \};\par
+    \}\par
+\par
+    function nowString()\{\par
+      const d = new Date();\par
+      return d.toLocaleString();\par
+    \}\par
+\par
+    function showToast(msg)\{\par
+      const t = document.getElementById("toast");\par
+      t.textContent = msg || "Done";\par
+      t.style.display = "block";\par
+      setTimeout(()=>\{ t.style.display = "none"; \}, 1600);\par
+    \}\par
+\par
+    function copyToClipboard(text)\{\par
+      if(navigator.clipboard)\{\par
+        navigator.clipboard.writeText(text).then(()=>showToast("Signal copied to clipboard"));\par
+      \}\par
+    \}\par
+\par
+    const form = document.getElementById("signalForm");\par
+    const resultBox = document.getElementById("result");\par
+\par
+    form.addEventListener("submit", async (e)=>\{\par
+      e.preventDefault();\par
+\par
+      const broker = document.getElementById("broker").value;\par
+      const pair = document.getElementById("pair").value;\par
+      const tf = document.getElementById("timeframe").value;\par
+\par
+      // TODO: Replace this with your real API call\par
+      // Example:\par
+      // const res = await fetch("/.netlify/functions/get-signal", \{ method: "POST", body: JSON.stringify(\{ broker, pair, tf \}) \})\par
+      // const data = await res.json();\par
+      const data = fakeSignal();\par
+\par
+      // Fill UI\par
+      document.getElementById("r_action").textContent = data.action;\par
+      document.getElementById("r_conf").textContent = data.confidence;\par
+      document.getElementById("r_broker").textContent = broker;\par
+      document.getElementById("r_pair").textContent = pair;\par
+      document.getElementById("r_tf").textContent = tf;\par
+      document.getElementById("r_time").textContent = nowString();\par
+\par
+      resultBox.style.display = "block";\par
+\par
+      // Copy compact line to clipboard (optional)\par
+      const line = `$\{broker\} | $\{pair\} | TF $\{tf\} | $\{data.action\} | Conf $\{data.confidence\} | $\{nowString()\}`;\par
+      copyToClipboard(line);\par
+    \});\par
+  </script>\par
+</body>\par
+</html>\f0\par
+}
+ 
